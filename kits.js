@@ -113,3 +113,16 @@ function saveData(key, arr) {
   var json = JSON.stringify(arr);
   localStorage.setItem(key, json);
 }
+
+
+// 封装计算购物车里面的商品总量的代码
+function total(){
+  // 加载所有的数据
+  var arr = loadData('shopCart');
+  // 计算总件数
+  var total = 0;
+  arr.forEach(function(e){
+    total += e.number;
+  });
+  return total;
+}
